@@ -207,7 +207,7 @@ async function generateNewAccessToken() {
   }
 }
 
-app.get("/validate_user", async (req, res) => {
+app.get("/validate_token", async (req, res) => {
   const accessToken =
     "ya29.a0AfB_byDz1F6vh0Yrbca9mvad1M6CRhX-kpK8cvVOumLzJIEiV-3AF_st157luqQwDXexdqso_GdDAPSds5oXzgQUAqtDMxCCclVSlx7LCLq5vnPOrqL3Togs771ss_6xEZLKFN8xIj3j014QFXP9VUP2SQi0npQaCgYKAUYSARMSFQHsvYls2ILDo_jBwSmvx5qrGkINAg0166";
   const status = await checkTokenExpiration(accessToken);
