@@ -30,7 +30,6 @@ app.get("/login", (req, res) => {
     `&scope=email%20profile` +
     `&access_type=offline`;
 
-    console.log(authUrl)
     res.writeHead(302, { Location: authUrl }); // Use 302 for temporary redirection
     res.end();
 });
