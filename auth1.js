@@ -2,12 +2,21 @@ const express = require("express");
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
+const cors = require('cors')
 require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
+
+const corsOptions = {
+  origin: "http://localhost:5000/",
+  methods: ["POST"], // Specify the allowed HTTP methods
+};
+
+// Use the CORS middleware with the specified options
+app.use(cors(corsOptions));
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
